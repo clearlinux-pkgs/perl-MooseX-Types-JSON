@@ -4,12 +4,13 @@
 #
 Name     : perl-MooseX-Types-JSON
 Version  : 1.00
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Summary  : 'JSON datatype for Moose'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-MooseX-Types-JSON-license = %{version}-%{release}
 Requires: perl-MooseX-Types-JSON-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
@@ -56,6 +57,14 @@ Requires: perl-MooseX-Types-JSON = %{version}-%{release}
 dev components for the perl-MooseX-Types-JSON package.
 
 
+%package license
+Summary: license components for the perl-MooseX-Types-JSON package.
+Group: Default
+
+%description license
+license components for the perl-MooseX-Types-JSON package.
+
+
 %package perl
 Summary: perl components for the perl-MooseX-Types-JSON package.
 Group: Default
@@ -91,6 +100,8 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-MooseX-Types-JSON
+cp %{_builddir}/MooseX-Types-JSON-1.00/LICENSE %{buildroot}/usr/share/package-licenses/perl-MooseX-Types-JSON/d7d164eebbac5ca055935f48ffcfaac6ab44138c
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -108,6 +119,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/share/man/man3/MooseX::Types::JSON.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-MooseX-Types-JSON/d7d164eebbac5ca055935f48ffcfaac6ab44138c
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/MooseX/Types/JSON.pm
+/usr/lib/perl5/vendor_perl/5.30.2/MooseX/Types/JSON.pm
