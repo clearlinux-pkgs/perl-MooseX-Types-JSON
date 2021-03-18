@@ -4,7 +4,7 @@
 #
 Name     : perl-MooseX-Types-JSON
 Version  : 1.00
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Summary  : 'JSON datatype for Moose'
@@ -125,4 +125,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/MooseX/Types/JSON.pm
+/usr/lib/perl5/vendor_perl/5.32.1/MooseX/Types/JSON.pm
