@@ -4,7 +4,7 @@
 #
 Name     : perl-MooseX-Types-JSON
 Version  : 1.00
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MI/MILA/MooseX-Types-JSON-1.00.tar.gz
 Summary  : 'JSON datatype for Moose'
